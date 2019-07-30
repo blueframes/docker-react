@@ -1,0 +1,11 @@
+sudo: required
+services: 
+  - docker
+#work before text or ran
+# - implies array type entry
+before_install:
+  - docker build -t bluelightskd/docker-react -f Dockerfile.dev .
+
+script:
+  #- docker run bluelightskd/docker-react npm run test -- --coverage
+  - docker run -e CI=true bluelightskd/docker-react npm run test
