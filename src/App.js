@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+         Welcome to Dockered React! Now added docker-compose!
         </a>
       </header>
     </div>

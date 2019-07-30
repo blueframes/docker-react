@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build:
+      context: . #look in this context for the dockerfile
+      dockerfile: Dockerfile.dev #this is the file used for the image.
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm","run","test"] #override default commands
